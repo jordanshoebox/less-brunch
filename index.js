@@ -7,6 +7,7 @@ function LESSCompiler(config) {
   if (config.plugins == null) config.plugins = {};
 
   this.config = config.plugins.less || {};
+  console.log(this.config);
   this.rootPath = config.paths.root;
   this.optimize = config.optimize;
   this.getDependencies = progeny({rootPath: this.rootPath, reverseArgs: true});
@@ -19,7 +20,7 @@ LESSCompiler.prototype.extension = 'less';
 LESSCompiler.prototype.compile = function(params, callback) {
   var data = params.data;
   var path = params.path;
-  console.log(this.rootPath);
+  
   less.render(data, {
     paths: [this.rootPath],
     filename: path,
