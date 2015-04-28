@@ -7,9 +7,8 @@ function LESSCompiler(config) {
   if (config.plugins == null) config.plugins = {};
 
   this.config = config.plugins.less || {};
-  console.log(this.config);
+  console.log(config);
   this.rootPath = config.paths.root;
-  console.log(this.rootPath);
   this.optimize = config.optimize;
   this.getDependencies = progeny({rootPath: this.rootPath, reverseArgs: true});
 }
