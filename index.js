@@ -21,7 +21,7 @@ LESSCompiler.prototype.compile = function(params, callback) {
   var path = params.path;
 
   less.render(data, {
-    paths: [this.rootPath, sysPath.dirname(path)],
+    paths: [this.rootPath],
     filename: path,
     dumpLineNumbers: !this.optimize && this.config.dumpLineNumbers
   }, function(error, output) {
