@@ -22,7 +22,10 @@ LESSCompiler.prototype.compile = function(params, callback) {
   var data = params.data;
   var path = params.path;
   
-  console.log("WTF?", path);
+  if (path.indexOf(this.rootPath) != 0) {
+    return;
+  }
+  
   less.render(data, {
     paths: [this.rootPath],
     filename: path,
