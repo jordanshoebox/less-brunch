@@ -23,7 +23,7 @@ LESSCompiler.prototype.compile = function(params, callback) {
   var path = params.path;
   
   if (path.indexOf(this.rootPath) != 0) {
-    return;
+    return callback(null, null);
   }
   
   less.render(data, {
