@@ -19,7 +19,7 @@ LESSCompiler.prototype.extension = 'less';
 LESSCompiler.prototype.compile = function(params, callback) {
   var data = params.data;
   var path = params.path;
-
+  console.log(this.rootPath);
   less.render(data, {
     paths: [this.rootPath],
     filename: path,
